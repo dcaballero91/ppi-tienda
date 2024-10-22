@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="#">Waka Pod</a></li>
+            <li><a href="/ignite">Ignite Pod</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="/logout">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>EL KP Pod</h1>
+    </header>
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <a href="/ignite">
+                    <img src="{{ url_for('static', filename='img/product1.jpg') }}" alt="Producto 1">
+                </a>
+                <a href="/producto2">
+                    <img src="{{ url_for('static', filename='img/product2.jpg') }}" alt="Producto 2">
+                </a>
+                <a href="/producto3">
+                    <img src="{{ url_for('static', filename='img/product3.jpg') }}" alt="Producto 3">
+                </a>
+                <a href="/producto4">
+                    <img src="{{ url_for('static', filename='img/product4.jpg') }}" alt="Producto 4">
+                </a>
+                <a href="/producto5">
+                    <img src="{{ url_for('static', filename='img/product5.jpg') }}" alt="Producto 5">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="brands">
+        <h2>Marcas de Pods</h2>
+        <div class="brands-container">
+            <div class="brand">
+                <img src="{{ url_for('static', filename='img/waka.jpg') }}" alt="Waka Pod">
+                <p>Waka Pod</p>
+            </div>
+            <div class="brand">
+                <img src="{{ url_for('static', filename='img/ignite.jpg') }}" alt="Ignite Pod">
+                <p>Ignite Pod</p>
+            </div>
+            <div class="brand">
+                <img src="{{ url_for('static', filename='img/desechable.jpg') }}" alt="Pod Desechable">
+                <p>Pod Desechable</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll('.carousel-slide img');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            for (let i = 0; i < totalSlides; i++) {
+                slides[i].style.display = 'none';
+            }
+            index++;
+            if (index > totalSlides) { index = 1 }
+            slides[index - 1].style.display = 'block';
+            setTimeout(showSlides, 2000); // Cambia la imagen cada 2 segundos
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>

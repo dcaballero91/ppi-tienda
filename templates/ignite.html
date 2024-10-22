@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite - Productos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="#">Waka Pod</a></li>
+            <li><a href="/ignite">Ignite Pod</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="/logout">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <h1>Productos Ignite</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/product1.jpg') }}" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>Precio: $19.99</p>
+            <p class="availability available">Disponible</p>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/product2.jpg') }}" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p>Precio: $29.99</p>
+            <p class="availability out-of-stock">Agotado</p>
+        </div>
+    </div>
+</body>
+</html>
